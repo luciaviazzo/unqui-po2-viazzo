@@ -1,5 +1,6 @@
 package ar.edu.unq.po2.tp2;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -52,5 +53,15 @@ public abstract class Empleado {
 
 	public float calcularSueldoNeto() {
 		return (float) (calcularSueldoBruto() - calcularRetenciones());
+	}
+	
+	public void generarRecibo(java.util.Date fecha) {
+		ReciboHaberes recibo = new ReciboHaberes();
+		this.compartirDatos(recibo, fecha);
+		this.agregarRecibo(recibo);
+	}
+	
+	public void compartirDatos(ReciboHaberes recibo, java.util.Date fecha) {
+		recibo.setEmpleadoDatos(this.getNombre(), this.getDireccion(), fecha, this.getSueldoBasico(), this.calcularSueldoNeto());
 	}
 }

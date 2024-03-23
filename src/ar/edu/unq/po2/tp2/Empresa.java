@@ -44,8 +44,14 @@ public class Empresa {
 		return calcularTotal(Empleado::calcularSueldoBruto);
 	}
 	
-	
 	public void liquidarSueldos(Date fecha) {
+		for (Empleado empleado : empleados) {
+			empleado.generarRecibo(fecha);
+		}
+	}
+	
+	
+	/*public void liquidarSueldos(Date fecha) {
 		for (Empleado empleado : empleados) {
 			ReciboHaberes recibo = new ReciboHaberes();
 			recibo.generarRecibo(empleado, fecha);
@@ -56,5 +62,5 @@ public class Empresa {
 	
 	public void entregarRecibo(Empleado empleado, ReciboHaberes recibo) {
 		empleado.agregarRecibo(recibo);
-	}
+	}*/
 }

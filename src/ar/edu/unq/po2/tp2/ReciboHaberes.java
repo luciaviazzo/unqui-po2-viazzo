@@ -5,48 +5,34 @@ import java.util.Date;
 
 public class ReciboHaberes {
 	
-	public String nombre;
+	public String nombreEmpleado;
 	public String direccion;
 	public Date fechaEmision;
 	public float sueldoBruto;
 	public float sueldoNeto;
 	
 	
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	
-	
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
-	
-	
 	public void setFechaEmision(Date fechaEmision) {
+		
+	}
+	
+	
+	public void setEmpleadoDatos(String nombreEmpleado, String direccion, Date fechaEmision, float sueldoBruto, float sueldoNeto) {
+		this.nombreEmpleado = nombreEmpleado;
+		this.direccion = direccion;
+		this.sueldoBruto = sueldoBruto;
+		this.sueldoNeto = sueldoNeto;
 		this.fechaEmision = fechaEmision;
 	}
 	
 	
-	public void setSueldoBruto(float sueldoBruto) {
-		this.sueldoBruto = sueldoBruto;
-	}
-	
-
-	public void setSueldoNeto(float sueldoNeto) {
-		this.sueldoNeto = sueldoNeto;
-	}
-	
-	
-	public void setAll(Empleado empleado, Date fechaEmision) {
-		setNombre(empleado.getNombre());
-		setDireccion(empleado.getDireccion());
-		setSueldoBruto(empleado.calcularSueldoBruto());
-		setSueldoNeto(empleado.calcularSueldoNeto());
-		setFechaEmision(fechaEmision);
+	public void crearRecibo(Date fecha) {
+		this.setFechaEmision(fecha);
 	}
 
 
-	public void generarRecibo(Empleado empleado, Date fechaEmision) {
-		setAll(empleado, fechaEmision);
+
+	public String getNombreEmpleado() {
+		return nombreEmpleado;
 	}
 }
