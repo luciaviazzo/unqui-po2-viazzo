@@ -16,9 +16,6 @@ public class Empresa {
 		this.empleados = new ArrayList<Empleado>();
 	}
 
-	public ArrayList<Empleado> getEmpleados() {
-		return empleados;
-	}
 
 	public void agregarEmpleado(Empleado empleado) {
 		empleados.add(empleado);
@@ -49,18 +46,4 @@ public class Empresa {
 			empleado.generarRecibo(fecha);
 		}
 	}
-	
-	
-	/*public void liquidarSueldos(Date fecha) {
-		for (Empleado empleado : empleados) {
-			ReciboHaberes recibo = new ReciboHaberes();
-			recibo.generarRecibo(empleado, fecha);
-			entregarRecibo(empleado, recibo);
-		}
-	}
-	
-	
-	public void entregarRecibo(Empleado empleado, ReciboHaberes recibo) {
-		empleado.agregarRecibo(recibo);
-	}*/
 }

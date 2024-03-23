@@ -12,11 +12,6 @@ public class ReciboHaberes {
 	public float sueldoNeto;
 	
 	
-	public void setFechaEmision(Date fechaEmision) {
-		
-	}
-	
-	
 	public void setEmpleadoDatos(String nombreEmpleado, String direccion, Date fechaEmision, float sueldoBruto, float sueldoNeto) {
 		this.nombreEmpleado = nombreEmpleado;
 		this.direccion = direccion;
@@ -24,15 +19,5 @@ public class ReciboHaberes {
 		this.sueldoNeto = sueldoNeto;
 		this.fechaEmision = fechaEmision;
 	}
-	
-	
-	public void crearRecibo(Date fecha) {
-		this.setFechaEmision(fecha);
-	}
 
-
-
-	public String getNombreEmpleado() {
-		return nombreEmpleado;
-	}
 }
