@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.function.Function;
 
-import tp2.Empleado;
-import tp2.ReciboHaberes;
 
 public class Empresa {
 	private String nombre;

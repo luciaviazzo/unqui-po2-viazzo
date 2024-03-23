@@ -2,7 +2,7 @@ package ar.edu.unq.po2.tp2;
 
 import java.time.LocalDate;
 
-public class Empleado {
+public abstract class Empleado {
 	protected String nombre;
 	protected String direccion;
 	protected String estadoCivil;

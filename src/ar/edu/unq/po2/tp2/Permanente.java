@@ -2,7 +2,7 @@ package ar.edu.unq.po2.tp2;
 
 import java.time.LocalDate;
 
-public class Permanente {
+public class Permanente extends Empleado{
 	private int cantHijos;
 	private int antiguedad;
 
