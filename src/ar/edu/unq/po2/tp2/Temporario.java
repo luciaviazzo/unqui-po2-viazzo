@@ -10,13 +10,14 @@ public class Temporario extends Empleado{
 	public Temporario(String nombre, String direccion, String estadoCivil, LocalDate fechaNac, float suledoBasico,
 			Date fechaFin, int cantHotasExtras) {
 		super(nombre, direccion, estadoCivil, fechaNac, suledoBasico);
-		// TODO Auto-generated constructor stub
 	}
 
+	
 	@Override
 	public float calcularSueldoBruto() {
-		return sueldoBasico + adicionalPorHorasExtras();
+		return this.getSueldoBasico() + adicionalPorHorasExtras();
 	}
+
 
 	public float adicionalPorHorasExtras() {
 		return cantHorasExtras * 40;

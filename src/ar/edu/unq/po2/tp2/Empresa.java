@@ -43,4 +43,18 @@ public class Empresa {
 	public float calcularTotalSueldosBrutos() {
 		return calcularTotal(Empleado::calcularSueldoBruto);
 	}
+	
+	
+	public void liquidarSueldos(Date fecha) {
+		for (Empleado empleado : empleados) {
+			ReciboHaberes recibo = new ReciboHaberes();
+			recibo.generarRecibo(empleado, fecha);
+			entregarRecibo(empleado, recibo);
+		}
+	}
+	
+	
+	public void entregarRecibo(Empleado empleado, ReciboHaberes recibo) {
+		empleado.agregarRecibo(recibo);
+	}
 }

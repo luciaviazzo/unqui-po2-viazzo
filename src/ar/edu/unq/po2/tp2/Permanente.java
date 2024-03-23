@@ -15,7 +15,7 @@ public class Permanente extends Empleado{
 
 	@Override
 	public float calcularSueldoBruto() {
-		return sueldoBasico + salarioFamiliar() + asignacionPorAntiguedad();
+		return this.getSueldoBasico() + salarioFamiliar() + asignacionPorAntiguedad();
 
 	}
 

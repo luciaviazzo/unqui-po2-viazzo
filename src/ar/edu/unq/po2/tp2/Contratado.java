@@ -13,7 +13,7 @@ public class Contratado extends Empleado{
 
 	@Override
 	public float calcularSueldoBruto() {
-		return sueldoBasico;
+		return this.getSueldoBasico();
 	}
 
 	@Override
