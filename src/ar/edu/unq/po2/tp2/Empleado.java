@@ -44,9 +44,7 @@ public abstract class Empleado {
 	public int calcularEdad() {
 		LocalDate currentDate = LocalDate.now();
 		return currentDate.getYear() - fechaNac.getYear();
-	} {
-		
-	}
+	} 
 	
 
 	public float calcularSueldoBruto() {
