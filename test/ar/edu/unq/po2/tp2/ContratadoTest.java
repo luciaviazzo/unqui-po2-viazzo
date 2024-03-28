@@ -13,7 +13,7 @@ class ContratadoTest {
     
 	@BeforeEach
 	void setUp()  {
-		empleadoContratado =  new Contratado("Lucia", "Calle 123", "soltero" ,LocalDate.of(1990, 5, 15),100000, 123 , "transferencia bancaria") ;
+		empleadoContratado =  new Contratado("Lucia", "Calle 123", "soltero" ,LocalDate.of(1990, 5, 15),100000, 123 , "transferencia bancaria");
 	}
 
 	
