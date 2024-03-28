@@ -14,28 +14,26 @@ public class Permanente extends Empleado{
 	}
 
 	@Override
-	public float calcularSueldoBruto() {
-		return this.getSueldoBasico() + salarioFamiliar() + asignacionPorAntiguedad();
-
+	public float adicionalesPor() {
+		return salarioFamiliar() + asignacionPorAntiguedad();
 	}
 
+	
 	public float salarioFamiliar() {
 		return (cantHijos * 150) + (estadoCivil.equals("casado") ? 100 : 0); // Optional chaining
 	}
-
+ 
+	
 	public float asignacionPorAntiguedad() {
 		return antiguedad * 50;
 	}
 
 	@Override
-	public float calcularRetenciones() {
-		return retencionesPorObraSocial() + aportesJubilatorios();
-	}
-
 	public float retencionesPorObraSocial() {
 		return (float) ((0.10 * calcularSueldoBruto()) + (20 * cantHijos));
 	}
 
+	@Override
 	public float aportesJubilatorios() {
 		return (float) (0.15 * calcularSueldoBruto());
 	}

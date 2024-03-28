@@ -1,5 +1,6 @@
 package ar.edu.unq.po2.tp2;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.function.Function;
@@ -14,6 +15,11 @@ public class Empresa {
 		this.nombre = nombre;
 		this.CUIT = CUIT;
 		this.empleados = new ArrayList<Empleado>();
+	}
+	
+	
+	public ArrayList<Empleado> getEmpleados() {
+		return empleados;
 	}
 
 
@@ -41,9 +47,10 @@ public class Empresa {
 		return calcularTotal(Empleado::calcularSueldoBruto);
 	}
 	
-	public void liquidarSueldos(Date fecha) {
-		for (Empleado empleado : empleados) {
-			empleado.generarRecibo(fecha);
-		}
-	}
+	
+	public void liquidarSueldos(LocalDate fecha) {
+		   for (Empleado empleado : empleados) {
+			   empleado.agregarRecibo(fecha);
+	       }
+	   }
 }

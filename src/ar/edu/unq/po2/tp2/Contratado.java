@@ -9,6 +9,8 @@ public class Contratado extends Empleado{
 	public Contratado(String nombre, String direccion, String estadoCivil, LocalDate fechaNac, float suledoBasico,
 			int numeroContrato, String medioDePago) {
 		super(nombre, direccion, estadoCivil, fechaNac, suledoBasico);
+		this.numeroContrato = numeroContrato;
+		this.medioDePago = medioDePago;
 	}
 
 	@Override

@@ -1,5 +1,4 @@
 package ar.edu.unq.po2.tp2;
-
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -37,31 +36,53 @@ public abstract class Empleado {
 	}
 	
 	
-	public void agregarRecibo(ReciboHaberes recibo) {
-		recibos.add(recibo);
+	public ArrayList<ReciboHaberes> getRecibos() {
+		return recibos;
 	}
 	
 
 	public int calcularEdad() {
 		LocalDate currentDate = LocalDate.now();
 		return currentDate.getYear() - fechaNac.getYear();
+	} {
+		
+	}
+	
+
+	public float calcularSueldoBruto() {
+		return this.getSueldoBasico() + this.adicionalesPor();
+	}
+	
+	
+	protected float adicionalesPor() {
+		return 0;
 	}
 
-	public abstract float calcularSueldoBruto();
 
-	public abstract float calcularRetenciones();
+	public float calcularRetenciones() {
+		return this.retencionesPorObraSocial() + this.aportesJubilatorios();
+	}
+	
+	
+	public float retencionesPorObraSocial() {
+		return 0;
+	}
+	
+	
+	public float aportesJubilatorios() {
+		return 0;
+	}
+	
 
 	public float calcularSueldoNeto() {
 		return (float) (calcularSueldoBruto() - calcularRetenciones());
 	}
 	
-	public void generarRecibo(java.util.Date fecha) {
-		ReciboHaberes recibo = new ReciboHaberes();
-		this.compartirDatos(recibo, fecha);
-		this.agregarRecibo(recibo);
-	}
 	
-	public void compartirDatos(ReciboHaberes recibo, java.util.Date fecha) {
-		recibo.setEmpleadoDatos(this.getNombre(), this.getDireccion(), fecha, this.getSueldoBasico(), this.calcularSueldoNeto());
+	public void agregarRecibo(LocalDate fecha) {
+        ReciboHaberes nuevoRecibo = new ReciboHaberes(this.getNombre(), this.getDireccion(), fecha, this.getSueldoBasico(), this.calcularSueldoNeto());
+        recibos.add(nuevoRecibo);
+        nuevoRecibo.agregarConceptos(this.retencionesPorObraSocial(), this.aportesJubilatorios());
 	}
+
 }
