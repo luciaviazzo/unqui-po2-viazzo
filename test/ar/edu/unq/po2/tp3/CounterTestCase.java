@@ -1,26 +1,32 @@
 package ar.edu.unq.po2.tp3;
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 public class CounterTestCase {
 	private Counter counter;
+	private ArrayList<Integer> numbers;
 	
 	@BeforeEach
 	public void setUp() throws Exception {
 
 	counter = new Counter();
 
-	counter.addNumber(10);
-	counter.addNumber(3);
-	counter.addNumber(5);
+	counter.addNumber(102);
+	counter.addNumber(321);
+	counter.addNumber(5111);
 	counter.addNumber(7);
 	counter.addNumber(9);
-	counter.addNumber(2);
+	counter.addNumber(222);
 	counter.addNumber(1);
 	counter.addNumber(5);
 	counter.addNumber(8);
-	counter.addNumber(4);
+	counter.addNumber(4);	
+	
 	}
+
 	
 	
 	@Test
@@ -39,7 +45,13 @@ public class CounterTestCase {
 	
 	@Test
 	public void testMultiplesNumbersOf3() {
-	int amount = counter.countMultiplesOf(3);
+	int amount = counter.countMultiplesOf(4);
 	assertEquals(amount, 2);
+	}
+	
+	
+	@Test
+	public void testNumberMoreEvenDigits() {
+	assertEquals(counter.numberMoreEvenDigits(counter.getIntegerNumbers()), 222);
 	}
 }
