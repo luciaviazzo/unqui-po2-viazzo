@@ -1,57 +1,30 @@
 package ar.edu.unq.po2.tp3;
 
-public class Rectangulo {
-
-	private int alto;
+public class Rectangulo extends Cuadrado{
+	
 	private int ancho;
-	private Punto puntoInferiorIzquierdo;
 	
-	
-	public Rectangulo(int alto, int ancho, Punto puntoInferiorIzquierdo) {
-		this.alto = alto;
+	public Rectangulo(int alto, Punto puntoInferiorIzquierdo, int ancho) {
+		super(alto, puntoInferiorIzquierdo);
 		this.ancho = ancho;
-		this.puntoInferiorIzquierdo = puntoInferiorIzquierdo;
 	}
-	
-	
-	public int getAlto() {
-		return alto;
-	}
+
 	
 	public int getAncho() {
 		return ancho;
 	}
-	
-	
-	public Punto getPuntoInferiorIzquierdo() {
-		return puntoInferiorIzquierdo;
-	}
-	
+
+	@Override
 	public Punto puntoInferiorDerecho() {
 		return this.getPuntoInferiorIzquierdo().sumarXeY(this.getAncho(), 0);
 	}
 	
-	public Punto puntoSuperiorIzquierdo() {
-		return this.getPuntoInferiorIzquierdo().sumarXeY(0, this.getAlto());
-	}
-	
-	public Punto puntoSuperiorDerecho() {
-		return this.puntoInferiorDerecho().sumarXeY(0, this.getAlto());
-	}
-	
-	
-	public void crear() {
-		this.getPuntoInferiorIzquierdo();
-		this.puntoInferiorDerecho();
-		this.puntoSuperiorIzquierdo();
-		this.puntoSuperiorDerecho();
-	}	
-	
-	
+	@Override
 	public int area() {
 		return (this.getAlto() * this.getAncho());
 	}
 	
+	@Override
 	public int perimetro() {
 		return ((2 * this.getAlto()) + (2 * this.getAncho()));
 	}

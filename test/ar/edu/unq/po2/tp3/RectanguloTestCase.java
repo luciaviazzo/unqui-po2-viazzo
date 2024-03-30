@@ -13,7 +13,7 @@ class RectanguloTestCase {
 	@BeforeEach
 	public void setUp() throws Exception {
 		puntoInferiorIzquierdo = new Punto(0, 0);
-		rectangulo = new Rectangulo(3, 5, puntoInferiorIzquierdo);
+		rectangulo = new Rectangulo(3, puntoInferiorIzquierdo, 5);
 		
 		rectangulo.crear();
 	}
