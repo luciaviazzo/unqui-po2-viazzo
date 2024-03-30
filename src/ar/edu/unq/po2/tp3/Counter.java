@@ -25,7 +25,7 @@ public class Counter {
 	public int countMultiplesOf(int nro) {
 		int count = 0;
 		for (int number : integerNumbers) {
-			if(this.isRestZero(number, nro)) {
+			if(this.isMultiple(number, nro)) {
 				count ++;
 			}
 		}
@@ -41,7 +41,7 @@ public class Counter {
 	public int countUneven() {
 		int count = 0;
 		for (int number : integerNumbers) {
-			if (!this.isRestZero(number, 2)) {
+			if (!this.isMultiple(number, 2)) {
 				count ++;
 			}
 		}
@@ -49,15 +49,14 @@ public class Counter {
 	}
 	
 	
-	//Indica si al dividir, el resto es 0
-	public boolean isRestZero(int dividend, int divider) {
-		return (dividend % divider == 0);
+	//Indica si x es multiplo de y
+	public boolean isMultiple(int x, int y) {
+		return (x % y == 0);
 	}
 	
 	
 	
 	//PUNTO 2
-	
 	//Receibe un arreglo de numeros y devuelve el nro con mayor cantidad de digitos pares
 	public int numberMoreEvenDigits(ArrayList<Integer> numbers) {
 		int maxNumber = 0;
@@ -84,11 +83,24 @@ public class Counter {
 
         while (number > 0) {
             int digit = number % 10; //Extraer el ultimo digito
-            if (this.isRestZero(digit, 2)) { //Verificar si el dígito es par
+            if (this.isMultiple(digit, 2)) { //Verificar si el dígito es par
             	amount++; 
             }
             number /= 10; // Elimina el ultimo digito
         }
         return amount; 
+	}
+	
+	
+	
+	//PUNTO 3
+	public int maxMultipl(int x, int y) {
+		int max = -1;
+		for (int i = 1000; i >= 0; i--) {
+			if(this.isMultiple(i, x) && (this.isMultiple(i, y))) {
+				max = i;
+			}
+		}
+		return max;
 	}
 }

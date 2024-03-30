@@ -31,27 +31,33 @@ public class CounterTestCase {
 	
 	@Test
 	public void testEvenNumbers() {
-	int amount = counter.countEven();
-	assertEquals(amount, 4);
+		int amount = counter.countEven();
+		assertEquals(amount, 4);
 	}
 	
 	
 	@Test
 	public void testUnevenNumbers() {
-	int amount = counter.countUneven();
-	assertEquals(amount, 6);
+		int amount = counter.countUneven();
+		assertEquals(amount, 6);
 	}
 	
 	
 	@Test
 	public void testMultiplesNumbersOf3() {
-	int amount = counter.countMultiplesOf(4);
-	assertEquals(amount, 2);
+		int amount = counter.countMultiplesOf(4);
+		assertEquals(amount, 2);
 	}
 	
 	
 	@Test
 	public void testNumberMoreEvenDigits() {
-	assertEquals(counter.numberMoreEvenDigits(counter.getIntegerNumbers()), 222);
+		assertEquals(counter.numberMoreEvenDigits(counter.getIntegerNumbers()), 222);
+	}
+	
+	
+	public void testMultipleOf() {
+		assertEquals(counter.isMultiple(1000, 10000), 1000);
+		assertEquals(counter.isMultiple(1000, 7), -1);
 	}
 }
