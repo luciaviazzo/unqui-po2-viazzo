@@ -32,10 +32,18 @@ public class Punto {
 	}
 	
 	//Suma otro punto y retorna un nuevo punto 
-	public Punto sumarOtroPunto(Punto p) {
+	public Punto sumarPunto(Punto p) {
 		Punto nuevoPunto = new Punto(x, y);
 		nuevoPunto.setX(this.getX() + p.getX());
 		nuevoPunto.setY(this.getY() + p.getY());
+		return nuevoPunto;
+	}
+	
+	//Suma un x y un y, devuelve un nuevo punto 
+	public Punto sumarXeY(int x, int y) {
+		Punto nuevoPunto = new Punto(x, y);
+		nuevoPunto.setX(this.getX() + x);
+		nuevoPunto.setY(this.getY() + y);
 		return nuevoPunto;
 	}
 }
