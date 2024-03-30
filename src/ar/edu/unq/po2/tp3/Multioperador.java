@@ -33,5 +33,7 @@ public class Multioperador {
 			total = total * numero;
 		}
 		return total;
-	}	
+	}
+	
+	
 }
