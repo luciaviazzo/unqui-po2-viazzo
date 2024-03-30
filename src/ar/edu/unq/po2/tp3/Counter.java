@@ -103,9 +103,5 @@ public class Counter {
 		}
 		return max;
 	}
-	
-	
-	
-	
 
 }
