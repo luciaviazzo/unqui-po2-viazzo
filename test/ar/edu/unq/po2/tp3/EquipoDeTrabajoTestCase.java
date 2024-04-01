@@ -32,5 +32,4 @@ class EquipoDeTrabajoTestCase {
 	public void test() {
 		assertEquals(equipo.promedioEdadIntegrantes(), 14.0);
 	}
-
 }
