@@ -22,8 +22,19 @@ public class Persona {
 		return fechaNac;
 	}
 	
+	
 	public int calcularEdad() {
 		LocalDate currentDate = LocalDate.now();
 		return currentDate.getYear() - fechaNac.getYear();
+	}
+	
+	
+	public boolean esMenorQue(Persona persona) {
+		return this.calcularEdad() < persona.calcularEdad();
+	}
+	
+	
+	public Persona crearPersona(String nombre, LocalDate fechaNac) {
+		return new Persona(nombre, fechaNac);
 	}
 }
