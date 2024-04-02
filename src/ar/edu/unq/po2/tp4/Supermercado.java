@@ -21,23 +21,28 @@ public class Supermercado {
 	}
 	
 	
-	public int cantidadProductos() {
-		return this.getProductos().size();
+	public void agregarProducto(Producto producto) {
+		productos.add(producto);
 	}
 	
 	
-	public float sumarPrecios() {
-        float total = 0.0f;
-        for (Producto producto : productos) {
-            total += producto.calcularPrecio();
-        }
-        return total;
-    }
+	public int getCantidadDeProductos() {
+		return this.getProductos().size();
+	}
 	
 	/*
-	public float sumarPrecios() {
-        return (float) productos.stream()
-                .mapToDouble(Producto::calcularPrecio) //Crea una nueva lista con los precios de cada producto (tipo double)
-                .sum();
+	public double getPrecioTotal() {
+        double total = 0;
+        for (Producto producto : productos) {
+            total += producto.getPrecio();
+        }
+        return total;
     }*/
+	
+	
+	public double getPrecioTotal() {
+        return  productos.stream()
+                .mapToDouble(Producto::getPrecio) //Crea una nueva lista con los precios de cada producto (tipo double)
+                .sum();
+    }
 }
