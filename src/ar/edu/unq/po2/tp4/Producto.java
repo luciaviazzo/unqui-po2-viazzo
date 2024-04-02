@@ -19,4 +19,15 @@ public class Producto {
     }
 	
 	
+	public float getPrecio() {
+		return precio;
+	}
+	
+	
+	public float calcularPrecio() {
+			return this.getPrecio();
+	}
+	
+	
 }
+
