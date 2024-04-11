@@ -2,9 +2,9 @@ package ar.edu.unq.po2.tp5;
 
 public class ProductoCooperativa extends Producto{
 	
-	private float descuento; 
+	private double descuento; 
 
-	public ProductoCooperativa(float precio, int stock, float descuento) {
+	public ProductoCooperativa(double precio, int stock, double descuento) {
 		super(precio, stock);
 		this.descuento = descuento;
 	}
@@ -12,7 +12,7 @@ public class ProductoCooperativa extends Producto{
 	
 	//Devuelve el precio con su decuento
 	@Override
-	public float getPrecio() {
-		return precio * descuento;
+	public double getPrecio() {
+		return precio - precio * descuento;
 	}
 }

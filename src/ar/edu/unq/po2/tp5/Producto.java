@@ -2,17 +2,17 @@ package ar.edu.unq.po2.tp5;
 
 public class Producto {
 	
-	protected float precio;
+	protected double precio;
 	protected int stock;
 	
 	
-	public Producto(float precio, int stock) {
+	public Producto(double precio, int stock) {
 		this.precio = precio;
 		this.stock = stock;
 	}
 	
 	
-	public float getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 	
