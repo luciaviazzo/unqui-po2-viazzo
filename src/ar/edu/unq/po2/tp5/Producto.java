@@ -2,8 +2,8 @@ package ar.edu.unq.po2.tp5;
 
 public class Producto {
 	
-	private float precio;
-	private int stock;
+	protected float precio;
+	protected int stock;
 	
 	
 	public Producto(float precio, int stock) {
