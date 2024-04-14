@@ -1,28 +1,36 @@
 package ar.edu.unq.po2.tp5;
 
-import java.util.ArrayList;
+import java.util.List;
+
 
 public class Caja {
 	
-	private ArrayList<Producto> productos;
+	private List<Pagable> pagables;
 	
 	
-	public Caja(ArrayList<Producto> productos) {
-		this.productos = productos; 
+	public Caja(List<Pagable> pagables) {
+		this.pagables = pagables; 
 	}
 	
 	
-	public void agregarProducto(Producto producto) {
-		productos.add(producto);
+	public void addPagable(Pagable pagable) {
+		pagables.add(pagable);
 	}
 	
 	
-	public void registrarProductos() {
-		for (Producto producto : productos) {
-			
-		}
+	//Registra a cada pagable de la lista, devuelve la suma de sus importes
+	public double registrarPagables() {
+		pagables.stream().forEach(pagable -> pagable.registrar());
+		
+		return this.sumarImportes();
 	}
 	
 	
+	//Suma todos los precios de los pagables de la lista
+	//Devuelve la suma total
+	public double sumarImportes() {
+		return pagables.stream().mapToDouble(Pagable::getPrecio).sum();
+	}
 
 }
+
