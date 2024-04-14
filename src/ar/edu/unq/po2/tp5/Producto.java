@@ -22,6 +22,11 @@ public class Producto {
 	}
 	
 	
+	public void registrar() {
+		this.reducirStock();
+	}
+	
+	
 	//Reduce en 1 el stock
 	public void reducirStock() {
 		stock --;
