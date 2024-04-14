@@ -36,11 +36,5 @@ public class Producto {
 	public boolean esPrecioCuidado() {
 		return esPrecioCuidado;
 	}
-	
-	
-	/*
-	public void aumentarPrecio(double porcentaje) {
-		
-	}*/
 }
 
