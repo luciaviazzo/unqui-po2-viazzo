@@ -12,6 +12,7 @@ public class Producto implements Pagable{
 	}
 	
 	
+	@Override
 	public double getPrecio() {
 		return precio;
 	}
@@ -22,6 +23,7 @@ public class Producto implements Pagable{
 	}
 	
 	
+	@Override
 	public void registrar() {
 		this.reducirStock();
 	}
