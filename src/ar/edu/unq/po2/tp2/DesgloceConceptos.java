@@ -15,7 +15,7 @@ public class DesgloceConceptos {
 	}
 	  
 	public DesgloceConceptos (String concepto, float monto) {
-		   this.concepto = concepto ;
+		   this.concepto = concepto;
 		   this.monto = monto;
 	  }
 }

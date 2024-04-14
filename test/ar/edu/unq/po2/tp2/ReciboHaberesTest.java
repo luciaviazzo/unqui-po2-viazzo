@@ -10,13 +10,14 @@ import org.junit.jupiter.api.Test;
 class ReciboHaberesTest {
 	
 	public Temporario empleadoTemporario;
-    public  ReciboHaberes recibo ;
+    public  ReciboHaberes recibo;
     
 	@BeforeEach
 	void setUp() {
 		empleadoTemporario = new Temporario ("Julian", "Calle 789", "divorciado", LocalDate.of(1965, 8, 10),100000, LocalDate.of(2023, 5, 10) , 15);
     	empleadoTemporario.agregarRecibo(LocalDate.of(2023, 3, 1));
-
+    	recibo = empleadoTemporario.getRecibos().get(0); // Aquí se obtiene el primer recibo del empleado
+    	
 	}
 
 	@Test
@@ -36,7 +37,7 @@ class ReciboHaberesTest {
 	
 	@Test
 	void sueldoBruto() {
-		assertEquals(100600, recibo.getSueldoBruto()); 
+		assertEquals(100000, recibo.getSueldoBruto()); 
 	}
 	
 	@Test

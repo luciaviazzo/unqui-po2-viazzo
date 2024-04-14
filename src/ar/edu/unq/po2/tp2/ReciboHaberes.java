@@ -55,6 +55,6 @@ public class ReciboHaberes {
 	
 	public void agregarConceptos(float montoObrSocial, float montoAportes) {
 		conceptos.add(new DesgloceConceptos("Obra Social", montoObrSocial));
-		conceptos.add(new DesgloceConceptos("Obra Social", montoAportes));
+		conceptos.add(new DesgloceConceptos("Jubilacion", montoAportes));
 	}
 }
