@@ -36,5 +36,6 @@ public class Producto {
 	public boolean esPrecioCuidado() {
 		return esPrecioCuidado;
 	}
+
 }
 

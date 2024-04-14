@@ -18,7 +18,7 @@ class ImpuestoTestCase {
 	
 
 	@Test
-	void test() {
+	void testPrecio() {
 		assertEquals(ganancias.getPrecio(), 25000);
 	}
 

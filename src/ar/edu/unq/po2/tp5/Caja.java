@@ -1,5 +1,6 @@
 package ar.edu.unq.po2.tp5;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -8,8 +9,8 @@ public class Caja {
 	private List<Pagable> pagables;
 	
 	
-	public Caja(List<Pagable> pagables) {
-		this.pagables = pagables; 
+	public Caja() {
+		this.pagables = new ArrayList<Pagable>(); 
 	}
 	
 	
