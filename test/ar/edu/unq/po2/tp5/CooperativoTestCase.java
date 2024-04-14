@@ -5,14 +5,14 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class ProductoCooperativaTestCase {
-	
-	private ProductoCooperativa harina;
+class CooperativoTestCase {
+
+	private Cooperativo harina;
 
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		harina = new ProductoCooperativa(500, 10, 0.10);
+		harina = new Cooperativo(500, 10, 0.10);
 	}
 
 	
