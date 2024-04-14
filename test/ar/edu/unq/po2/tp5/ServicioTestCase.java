@@ -18,7 +18,7 @@ class ServicioTestCase {
 	
 
 	@Test
-	void test() {
+	void testPrecio() {
 		assertEquals(luz.getPrecio(), 5000);
 	}
 
