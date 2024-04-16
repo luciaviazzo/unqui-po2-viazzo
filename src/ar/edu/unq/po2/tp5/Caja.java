@@ -14,24 +14,29 @@ public class Caja {
 	}
 	
 	
+	public List<Pagable> getPagables() {
+		return pagables;
+	}
+	
+	
 	public void addPagable(Pagable pagable) {
 		pagables.add(pagable);
 	}
 	
 	
-	//Registra a cada pagable de la lista, devuelve la suma de sus importes
-	public double registrarPagables() {
-		pagables.stream().forEach(pagable -> pagable.registrar());
-		
-		return this.sumarImportes();
+	//Agrega un "pagable" a la lista y llama a su metodo registrar
+	public void registrarPagables(Pagable pagable) {
+		this.addPagable(pagable);
+		pagable.registrar();
 	}
 	
 	
 	//Suma todos los precios de los pagables de la lista
 	//Devuelve la suma total
 	public double sumarImportes() {
-		return pagables.stream().mapToDouble(Pagable::getPrecio).sum();
+		return pagables.stream()
+					   .mapToDouble(Pagable::getPrecio)
+					   .sum();
 	}
-
 }
 

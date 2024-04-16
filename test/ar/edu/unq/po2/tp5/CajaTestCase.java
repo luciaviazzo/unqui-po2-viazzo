@@ -19,22 +19,30 @@ class CajaTestCase {
 	void setUp() throws Exception {
 		caja1 = new Caja();
 		
-		caja1.addPagable(harina);
-		caja1.addPagable(leche);
-		//caja1.addPagable(luz);
-		//caja1.addPagable(ganancias);
+		caja1.registrarPagables(harina);
+		caja1.registrarPagables(leche);
 	}
 
 	
 	@Test
-	void testRegistrarPagables() {
-		assertEquals(10, harina.getStock());
-		assertEquals(10, leche.getStock());
-		
-		assertEquals(caja1.registrarPagables(), 950);
+	void testRegistrarProductos() {
 		
 		assertEquals(9, harina.getStock());
 		assertEquals(9, leche.getStock());
+		assertEquals(2, caja1.getPagables().size());
+		
+		caja1.registrarPagables(harina);
+		caja1.registrarPagables(leche);
+		
+		assertEquals(8, harina.getStock());
+		assertEquals(8, leche.getStock());
+		assertEquals(4, caja1.getPagables().size());
 	}
-
+	
+	
+	@Test
+	void testTotalImportes() {
+		
+		assertEquals(caja1.sumarImportes(), 950);
+	}
 }
