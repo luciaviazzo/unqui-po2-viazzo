@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 class CajaTestCase {
 
-	private Agencia estado;
+	private AgenciaDePrueba estado = new AgenciaDePrueba();
 	private Caja caja1;
 	private Producto harina = new Producto(500, 10);
 	private Cooperativo leche = new Cooperativo(500, 10, 0.10);
@@ -37,6 +37,17 @@ class CajaTestCase {
 		assertEquals(8, harina.getStock());
 		assertEquals(8, leche.getStock());
 		assertEquals(4, caja1.getPagables().size());
+	}
+	
+	
+	@Test
+	void testRegistrarFacturas() {
+		
+		assertEquals(false, estado.estaPago());
+		
+		caja1.registrarPagables(luz);
+
+		assertEquals(true, estado.estaPago());
 	}
 	
 	
