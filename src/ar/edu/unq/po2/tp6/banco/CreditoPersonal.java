@@ -1,5 +1,16 @@
 package ar.edu.unq.po2.tp6.banco;
 
-public class CreditoPersonal {
+public class CreditoPersonal extends SolicitudCredito{
+
+	public CreditoPersonal(Cliente solicitante, double monto, int plazoEnMeses) {
+		super(solicitante, monto, plazoEnMeses);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public boolean esAceptable() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 }

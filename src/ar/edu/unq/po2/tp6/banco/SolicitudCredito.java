@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.tp6.banco;
 
-public class SolicitudCredito {
+public abstract class SolicitudCredito {
 
 	
 	private Cliente solicitante;
@@ -13,4 +13,12 @@ public class SolicitudCredito {
 		this.monto = monto;
 		this.plazoEnMeses = plazoEnMeses;
 	}
+	
+	
+	public double calcularCuotaMensual() {
+		return monto / plazoEnMeses;
+	}
+	
+	
+	public abstract boolean esAceptable();
 }
