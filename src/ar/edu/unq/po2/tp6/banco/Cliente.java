@@ -18,16 +18,25 @@ public class Cliente {
 	}
 	
 	
+	public int getEdad() {
+		return edad;
+	}
+	
+	
 	//Devuelve el ingreso anual 
 	public double calcularIngresoAnual() {
 		return sueldoNeto * 12;
 	}
-
 	
-	public void solicitarCredito(Banco banco, double monto) {
-		
+	
+	//Inica si el ingreso anual es mayor al impoorte dado 
+	public boolean esIngresoAnualMayorA(double importe) {
+		return this.calcularIngresoAnual() > importe;
 	}
 	
 	
-	
+	//Calcula el sueldo de acuerdo al porcentaje indicado
+	public double calcularPorcentajeIngresoMensul(double porcentaje) {
+		return sueldoNeto * porcentaje / 100;
+	}
 }

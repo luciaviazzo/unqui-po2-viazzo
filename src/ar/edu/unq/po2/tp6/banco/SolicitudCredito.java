@@ -3,9 +3,9 @@ package ar.edu.unq.po2.tp6.banco;
 public abstract class SolicitudCredito {
 
 	
-	private Cliente solicitante;
-	private double monto;
-	private int plazoEnMeses;
+	protected Cliente solicitante;
+	protected double monto;
+	protected int plazoEnMeses;
 	
 	
 	public SolicitudCredito(Cliente solicitante, double monto, int plazoEnMeses) {
@@ -15,10 +15,22 @@ public abstract class SolicitudCredito {
 	}
 	
 	
+	public double getMonto() {
+		return monto;
+	}
+	
+	
 	public double calcularCuotaMensual() {
 		return monto / plazoEnMeses;
 	}
 	
 	
+	//Inidica si la cuota del prestamo es menor al porcentaje del sueldo del solicitante
+	public boolean esCuotaMenorAPorcentajeSueldo(double porcentaje) {
+		return this.calcularCuotaMensual() < this.solicitante.calcularPorcentajeIngresoMensul(porcentaje);
+	}
+	
+	
 	public abstract boolean esAceptable();
+
 }

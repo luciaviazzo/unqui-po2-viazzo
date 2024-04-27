@@ -23,7 +23,12 @@ public class Banco {
 	}
 	
 	
-	public void evaluar(SolicitudCredito solicitud) {
-		
+	//Filtra las solicitudes aprobadas
+	//Suma el monto a desembolsar de cada una
+	public double calcularMontoTotalDesembolsable() {
+		return solicitudes.stream()
+						  .filter(solicitud -> solicitud.esAceptable())
+						  .mapToDouble(solicitud -> solicitud.getMonto())
+						  .sum();
 	}
 }
