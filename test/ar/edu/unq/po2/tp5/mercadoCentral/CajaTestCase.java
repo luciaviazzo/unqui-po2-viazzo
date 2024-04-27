@@ -1,9 +1,16 @@
-package ar.edu.unq.po2.tp5;
+package ar.edu.unq.po2.tp5.mercadoCentral;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import ar.edu.unq.po2.tp5.mercadoCentral.AgenciaDePrueba;
+import ar.edu.unq.po2.tp5.mercadoCentral.Caja;
+import ar.edu.unq.po2.tp5.mercadoCentral.Cooperativo;
+import ar.edu.unq.po2.tp5.mercadoCentral.Impuesto;
+import ar.edu.unq.po2.tp5.mercadoCentral.Producto;
+import ar.edu.unq.po2.tp5.mercadoCentral.Servicio;
 
 class CajaTestCase {
 

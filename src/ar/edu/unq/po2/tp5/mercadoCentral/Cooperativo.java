@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.tp5;
+package ar.edu.unq.po2.tp5.mercadoCentral;
 
 public class Cooperativo extends Producto{
 	
