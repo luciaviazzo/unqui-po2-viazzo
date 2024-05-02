@@ -8,12 +8,14 @@ public class CreditoPersonal extends SolicitudCredito{
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	//Indica si la solcitud cumple con las condiciones para ser aceptada 
-	//Sueldo anual del solicitante mayor a 15000
-	//Cuota mensual menor al 70% del sueldo del solicitante
+
 	@Override
 	public boolean esAceptable() {
-		return this.solicitante.esIngresoAnualMayorA(15000) && this.esCuotaMenorAPorcentajeSueldo(70);
+		return this.tieneIngresosAnualesMayoresA(15000) && this.esCuotaMenorAPorcentajeSueldo(70);
+	}
+	
+	
+	public boolean tieneIngresosAnualesMayoresA(double monto) {
+		return solicitante.calcularIngresoAnual() > monto;
 	}
 }

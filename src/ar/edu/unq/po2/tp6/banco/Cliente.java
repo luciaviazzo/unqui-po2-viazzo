@@ -23,20 +23,11 @@ public class Cliente {
 	}
 	
 	
-	//Devuelve el ingreso anual 
+	public double getSueldoNeto(){
+		return sueldoNeto;
+	}
+	
 	public double calcularIngresoAnual() {
-		return sueldoNeto * 12;
-	}
-	
-	
-	//Inica si el ingreso anual es mayor al impoorte dado 
-	public boolean esIngresoAnualMayorA(double importe) {
-		return this.calcularIngresoAnual() > importe;
-	}
-	
-	
-	//Calcula el sueldo de acuerdo al porcentaje indicado
-	public double calcularPorcentajeIngresoMensul(double porcentaje) {
-		return sueldoNeto * porcentaje / 100;
+		return this.getSueldoNeto() * 12;
 	}
 }

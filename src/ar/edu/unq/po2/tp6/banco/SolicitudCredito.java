@@ -27,7 +27,7 @@ public abstract class SolicitudCredito {
 	
 	//Inidica si la cuota del prestamo es menor al porcentaje del sueldo del solicitante
 	public boolean esCuotaMenorAPorcentajeSueldo(double porcentaje) {
-		return this.calcularCuotaMensual() < this.solicitante.calcularPorcentajeIngresoMensul(porcentaje);
+		return this.calcularCuotaMensual() < solicitante.getSueldoNeto() * porcentaje /100;
 	}
 	
 	

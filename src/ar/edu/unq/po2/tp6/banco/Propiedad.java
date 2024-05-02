@@ -13,10 +13,7 @@ public class Propiedad {
 	}
 	
 	
-	//Calcula el valor fiscal de acuerdo al porcentaje indicado
-	public double calcularPorcentajeValorFiscal(double porcentaje) {
-		return valorFiscal * porcentaje / 100;
+	public double getValorFiscal() {
+		return valorFiscal;
 	}
-	
-	
 }
