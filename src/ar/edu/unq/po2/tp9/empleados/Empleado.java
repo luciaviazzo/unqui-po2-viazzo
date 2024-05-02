@@ -16,5 +16,7 @@ public abstract class Empleado {
 	}
 	
 
-	public abstract double bonoExtra();
+	public double bonoExtra() {
+		return 0;
+	}
 }

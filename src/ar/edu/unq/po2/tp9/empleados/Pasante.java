@@ -8,11 +8,6 @@ public class Pasante extends Empleado{
 	public double sueldoBruto() {
 		return this.montoPorHorasTrabajadas();
 	}
-
-	@Override
-	public double bonoExtra() {
-		return 0;
-	}
 	
 	public double montoPorHorasTrabajadas() {
 		return cantHoras * 40;
