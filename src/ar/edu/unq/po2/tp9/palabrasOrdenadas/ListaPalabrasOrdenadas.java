@@ -41,4 +41,3 @@ public class ListaPalabrasOrdenadas {
 
 }
 
-//22 min
