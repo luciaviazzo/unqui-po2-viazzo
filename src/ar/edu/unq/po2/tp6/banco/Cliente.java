@@ -30,4 +30,8 @@ public class Cliente {
 	public double calcularIngresoAnual() {
 		return this.getSueldoNeto() * 12;
 	}
+	
+	public void solicitarCredito(Banco banco, SolicitudCredito solicitud) {
+		banco.addSolicitud(solicitud);
+	}
 }

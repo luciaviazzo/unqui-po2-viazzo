@@ -8,8 +8,9 @@ public class Banco {
 	private List<SolicitudCredito> solicitudes;
 	
 	
-	public Banco(List<Cliente> clientes) {
+	public Banco(List<Cliente> clientes, List<SolicitudCredito> solicitudes) {
 		this.clientes = clientes;
+		this.solicitudes = solicitudes;
 	}
 	
 	
