@@ -7,18 +7,18 @@ import java.util.List;
 
 public class ListaPalabrasOrdenadas {
 
-	private List<String>palabras;
+	private List<String> palabras;
 	private final Comparator comparador;
 	
 	
-	public ListaDePalabrasOrdenadas() {
+	public ListaPalabrasOrdenadas() {
 		this.palabras=new LinkedList<String>();
-		this.comparador=newComparator() {
+		this.comparador=new Comparator() {
 			@Override
 			public int compare(Object palabraA, Object palabraB) {
-			String a=((String)palabraA);
-			String b=(((String)palabraB));
-			return a.compareToIgnoreCase(b);
+				String a=((String)palabraA);
+				String b=(((String)palabraB));
+				return a.compareToIgnoreCase(b);
 			}
 		};
 	}
@@ -40,3 +40,5 @@ public class ListaPalabrasOrdenadas {
 	}
 
 }
+
+//22 min
