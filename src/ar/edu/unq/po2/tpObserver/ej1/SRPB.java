@@ -30,8 +30,12 @@ public class SRPB {
 	
 	public void setUltimoArticulo(Articulo ultimoArticulo) {
 		 this.ultimoArticulo = ultimoArticulo;
-		 suscriptores.stream()
-		 			   .forEach(suscriptor -> suscriptor.update(ultimoArticulo));
+		 this.notificarObservers(ultimoArticulo);
+	}
+	
+	public void notificarObservers(Articulo ultimoArticulo) {
+		suscriptores.stream()
+		   			.forEach(suscriptor -> suscriptor.update(ultimoArticulo));
 	}
 	
 	public void addArticulo(Articulo articulo) {
