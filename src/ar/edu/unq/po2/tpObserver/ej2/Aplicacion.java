@@ -1,8 +1,10 @@
 package ar.edu.unq.po2.tpObserver.ej2;
 
-public class Aplicacion {
+public class Aplicacion implements Suscriptor{
 
-public void recibirInfoPartido(Partido partido) {
+	@Override
+	public void recibirInfoPartido(Partido partido) {
+		// TODO Auto-generated method stub
 		
 	}
 }

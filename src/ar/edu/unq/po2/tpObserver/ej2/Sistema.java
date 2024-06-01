@@ -1,43 +1,30 @@
 package ar.edu.unq.po2.tpObserver.ej2;
-
-import java.util.List;
+import java.util.Set;
 
 public class Sistema {
 
-	private List<Partido> partidos;
-	private Partido ultimoPartido;
-	private List<Filter> suscriptores;
+	private Set<Partido> partidos;
+	private Set<GestorInteres> gestorDeIntereses;
 	
-	//susribir
-	public void addSuscriptor(Filter suscriptor) {
-		suscriptores.add(suscriptor);
+	public void suscribir(GestorInteres gestor, Suscriptor suscriptor) {
+		gestorDeIntereses.add(gestor);
+		gestor.suscribir(suscriptor);
 	}
 	
-	//desuscribir
-	public void removeSuscriptor(Filter suscriptor) {
-		suscriptores.remove(suscriptor);
+	public void desuscribir(GestorInteres gestor, Suscriptor suscriptor) {
+		gestorDeIntereses.remove(gestor);
+		gestor.desuscribir(suscriptor);
 	}
 	
-	//notify
 	public void notifyPartido(Partido partido) {
-		suscriptores.stream()
-					.forEach(s -> s.notify(partido));
+		gestorDeIntereses.stream()
+					.forEach(gestor -> gestor.notify(partido));
 	}
+
 	
-	//establecer estado 
-	public void setUltimoPartido(Partido partido) {
-		this.ultimoPartido = partido;
-		this.notifyPartido(partido);	
-	}
-	
-	//obtener estado
-	public Partido getUltimoPartido() {
-		return ultimoPartido;
-	}
-	
-	public void addUltimoPartido(Partido partido) {
+	public void addPartido(Partido partido) {
 		partidos.add(partido);
-		this.setUltimoPartido(partido);
+		this.notifyPartido(partido);
 	}
 	
 }

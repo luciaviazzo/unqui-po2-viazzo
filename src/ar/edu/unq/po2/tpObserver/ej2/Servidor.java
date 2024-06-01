@@ -1,11 +1,9 @@
 package ar.edu.unq.po2.tpObserver.ej2;
 
-import java.util.List;
+public class Servidor implements Suscriptor{
 
-public class Servidor {
-
+	@Override
 	public void recibirInfoPartido(Partido partido) {
-		
+		// TODO Auto-generated method stub
 	}
-	
 }
