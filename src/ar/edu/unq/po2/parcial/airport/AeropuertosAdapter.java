@@ -2,7 +2,7 @@ package ar.edu.unq.po2.parcial.airport;
 
 import java.time.LocalDate;
 
-public class AeropuertosAdapter implements IAgent{
+public class AeropuertosAdapter implements IAgent, InterfaceB{
 	
 	private Aeropuertos aeropuertos;
 

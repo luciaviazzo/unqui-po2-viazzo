@@ -19,4 +19,8 @@ public abstract class Empleado {
 	public double bonoExtra() {
 		return 0;
 	}
+	
+	private void comer() {
+		
+	}
 }

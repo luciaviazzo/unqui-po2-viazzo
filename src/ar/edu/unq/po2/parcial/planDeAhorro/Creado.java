@@ -1,17 +1,14 @@
 package ar.edu.unq.po2.parcial.planDeAhorro;
 
-public class Creado extends Fase{
+public class Creado extends Estado{
 
-	//Paga la primera cuota y cambia a fase Vigente
+	public void settearRetribucion(PlanDeAhorro plan, Retribucion retribucion) {
+		plan.setRetribucion(retribucion);
+	}
+
 	@Override
 	public void pagarCuota(PlanDeAhorro plan) {
-		plan.registrarCuota();
-		plan.setFase(new Vigente());
-	}
-	
-	//Se settea con la retibucion eleida por el cliente
-	@Override
-	public void setRetribucion(PlanDeAhorro plan, Retribucion retribucion) {
-		plan.setRetribucion(retribucion);
+		plan.descontarCuota();
+		plan.setEstado(new Vigente());
 	}
 }

@@ -17,4 +17,7 @@ public class Planta extends Empleado{
 		return cantHijos * 150;
 	}
 
+	public void alimaentar() {
+		this.com
+	}
 }

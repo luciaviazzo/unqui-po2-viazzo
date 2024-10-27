@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.parcial.planDeAhorro;
 
-public interface Retribucion {
+public abstract class Retribucion {
 
-	public void ejecutarRetribucion(PlanDeAhorro plan);
+	public abstract void ejecutar(PlanDeAhorro plan);
 }

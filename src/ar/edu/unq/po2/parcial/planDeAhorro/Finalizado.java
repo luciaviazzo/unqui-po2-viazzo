@@ -1,9 +1,9 @@
 package ar.edu.unq.po2.parcial.planDeAhorro;
 
-public class Finalizado extends Fase{
+public class Finalizado extends Estado {
 
-	@Override
 	public void ejecutarRetribucion(PlanDeAhorro plan, Retribucion retribucion) {
-		retribucion.ejecutarRetribucion(plan);
+		retribucion.ejecutar(plan);
+		plan.setEstado(new Cerrado());
 	}
 }

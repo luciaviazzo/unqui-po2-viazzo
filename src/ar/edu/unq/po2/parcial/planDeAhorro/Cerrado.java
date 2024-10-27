@@ -1,5 +1,5 @@
 package ar.edu.unq.po2.parcial.planDeAhorro;
 
-public class Cerrado extends Fase{
+public class Cerrado extends Estado {
 
 }
